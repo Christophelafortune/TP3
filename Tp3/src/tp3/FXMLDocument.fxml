@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp3.FXMLDocumentController">
+   <children>
+      <ToolBar layoutX="3.0" prefHeight="40.0" prefWidth="1024.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <items>
+            <Button fx:id="btnTaillePlus" focusTraversable="false" mnemonicParsing="false" onAction="#btnActionTaille" text="A+" />
+            <Button fx:id="btnTailleMoin" focusTraversable="false" mnemonicParsing="false" onAction="#btnActionTaille" text="A-" />
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur">
+               <graphic>
+                  <Circle radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tglGroupeBtnCouleur" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur" textFill="#ff1f1f" toggleGroup="$tglGroupeBtnCouleur">
+               <graphic>
+                  <Circle fill="#ff1f1f" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur" textFill="#4d8028" toggleGroup="$tglGroupeBtnCouleur">
+               <graphic>
+                  <Circle fill="#4d8028" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur" textFill="#0055d3" toggleGroup="$tglGroupeBtnCouleur">
+               <graphic>
+                  <Circle fill="#0055d3" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur" textFill="#9a0cd7" toggleGroup="$tglGroupeBtnCouleur">
+               <graphic>
+                  <Circle fill="#9a0cd7" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur" selected="true" textFill="#bfbfbf" toggleGroup="$tglGroupeBtnCouleur">
+               <graphic>
+                  <Circle fill="#bfbfbf" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur" textFill="#d77315" toggleGroup="$tglGroupeBtnCouleur">
+               <graphic>
+                  <Circle fill="#d77315" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#btnActionCouleur" textFill="#ffda21" toggleGroup="$tglGroupeBtnCouleur">
+               <graphic>
+                  <Circle fill="#ffdd1f" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </ToggleButton>
+            <ColorPicker fx:id="copSelecteurCouleur" focusTraversable="false" onAction="#copSelecteurCouleurAction" />
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#btnMotFin" text="Mots fin(s)= &gt; MAJ" />
+            <Button focusTraversable="false" mnemonicParsing="false" text="Inverse texte" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+        </items>
+      </ToolBar>
+      <TextArea fx:id="txaTexte" editable="false" layoutX="15.0" layoutY="62.0" prefHeight="667.0" prefWidth="482.0" wrapText="true" AnchorPane.bottomAnchor="39.0" />
+      <Label layoutX="9.0" layoutY="42.0" text="Texte" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="45.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="15.0" layoutY="730.0" mnemonicParsing="false" onAction="#btnClearAction" text="-">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <TextArea fx:id="txaMot" editable="false" layoutX="706.0" layoutY="63.0" prefHeight="665.0" prefWidth="166.0" />
+      <TextArea fx:id="txaNombrePos" editable="false" layoutX="509.0" layoutY="63.0" prefHeight="667.0" prefWidth="185.0" />
+      <Label layoutX="511.0" layoutY="45.0" text="Nombres positifs">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="708.0" layoutY="45.0" text="Mots">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button graphicTextGap="0.0" layoutX="510.0" layoutY="732.0" mnemonicParsing="false" onAction="#btnActionAjouterNb" prefHeight="30.0" prefWidth="39.0" text="+">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button graphicTextGap="0.0" layoutX="550.0" layoutY="732.0" mnemonicParsing="false" onAction="#btnActionEffacerNombre" prefHeight="30.0" prefWidth="39.0" text="-">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbTexte" layoutX="42.0" layoutY="730.0" onAction="#cmbTexteAction" prefHeight="30.0" prefWidth="456.0" promptText="Choix du texte à charger" />
+      <TextField fx:id="txaNbPos" alignment="CENTER_RIGHT" editable="false" layoutX="589.0" layoutY="732.0" prefHeight="30.0" prefWidth="105.0" promptText="0 nombres" />
+      <Button graphicTextGap="0.0" layoutX="705.0" layoutY="731.0" mnemonicParsing="false" onAction="#btnActionAjouterMot" prefHeight="30.0" prefWidth="39.0" text="+">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button graphicTextGap="0.0" layoutX="745.0" layoutY="731.0" mnemonicParsing="false" onAction="#btnActionEffacerMots" prefHeight="30.0" prefWidth="39.0" text="-">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txaNbMots" alignment="CENTER_RIGHT" editable="false" layoutX="784.0" layoutY="731.0" prefHeight="30.0" prefWidth="89.0" promptText="0 mots" />
+      <Label layoutX="911.0" layoutY="65.0" text="Tri des nombres">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="890.0" layoutY="224.0" text="Statistiques des mots">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rabAscendant" layoutX="907.0" layoutY="93.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="114.0" selected="true" text="Ascendant">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="tglRadioTri" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rabDescendant" layoutX="906.0" layoutY="122.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="114.0" text="Descendant" toggleGroup="$tglRadioTri">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <Button layoutX="895.0" layoutY="169.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="139.0" text="Trier Nombres">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Separator layoutX="896.0" layoutY="203.0" prefHeight="15.0" prefWidth="139.0" />
+      <Label layoutX="884.0" layoutY="296.0" text="Minuscules">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="886.0" layoutY="330.0" text="Majuscules">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbLettre" layoutX="882.0" layoutY="367.0" onAction="#cmbActionChoisirLettre" prefHeight="0.0" prefWidth="89.0" promptText="Lettre" />
+      <TextField fx:id="txtNbMin" alignment="CENTER_RIGHT" editable="false" layoutX="977.0" layoutY="292.0" prefHeight="25.0" prefWidth="63.0" promptText="0" />
+      <TextField fx:id="txtNbMaj" alignment="CENTER_RIGHT" editable="false" layoutX="977.0" layoutY="330.0" prefHeight="25.0" prefWidth="63.0" promptText="0" />
+      <TextField fx:id="txtNbLettreChoisi" alignment="CENTER_RIGHT" editable="false" layoutX="977.0" layoutY="368.0" prefHeight="25.0" prefWidth="63.0" promptText="0" />
+      <Button fx:id="btnQuitter" layoutX="885.0" layoutY="733.0" mnemonicParsing="false" onAction="#btnQuitterAction" prefHeight="25.0" prefWidth="178.0" text="Quitter" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="chbConfirmationQuitter" layoutX="885.0" layoutY="711.0" mnemonicParsing="false" text="Confirmation de fermeture">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </CheckBox>
+   </children>
+   
+</AnchorPane>
